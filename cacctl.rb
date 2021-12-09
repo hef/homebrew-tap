@@ -5,20 +5,20 @@
 class Cacctl < Formula
   desc ""
   homepage ""
-  version "0.5.1"
+  version "0.5.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Darwin_arm64.tar.gz"
-      sha256 "e756c0b225a91a860ba32ea2afccd4d0009727f5f6ee93a54eb98f63c0f87801"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.2/cacctl_0.5.2_Darwin_x86_64.tar.gz"
+      sha256 "0d9c24e7f0ccfc06931c32ee9678b818645866b8347a14bae372cd6d353e2ff0"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Darwin_x86_64.tar.gz"
-      sha256 "f7007543100dc49cc3bff9055ccefe8dfd54838786ebf262efab0a99714f6c82"
+    if Hardware::CPU.arm?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.2/cacctl_0.5.2_Darwin_arm64.tar.gz"
+      sha256 "84b0ed33c7bf328b73f58bcb2f33c3d625630f4a20935bdd35e9913008627146"
 
       def install
         bin.install "cacctl"
@@ -28,16 +28,16 @@ class Cacctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Linux_x86_64.tar.gz"
-      sha256 "97d0d6a17cbebeb98b574fab42fc028bc25823a04157069d7de3dd07b6f0985b"
+      url "https://github.com/hef/cacctl/releases/download/v0.5.2/cacctl_0.5.2_Linux_x86_64.tar.gz"
+      sha256 "9d8db9fa3fc21c6335ff90a3687f27dc05ba45cfccd0e97b3b123078f4d6769e"
 
       def install
         bin.install "cacctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Linux_arm64.tar.gz"
-      sha256 "77de1b273e742587c6702614c4c2a8102b1e0028fe520a3322c1449d77b02aa7"
+      url "https://github.com/hef/cacctl/releases/download/v0.5.2/cacctl_0.5.2_Linux_arm64.tar.gz"
+      sha256 "b04250b235d4173956ca68ed99058576439d6d3554428b8efe2348fa5ff9261b"
 
       def install
         bin.install "cacctl"
