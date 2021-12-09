@@ -5,20 +5,20 @@
 class Cacctl < Formula
   desc ""
   homepage ""
-  version "0.5.0"
+  version "0.5.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.0/cacctl_0.5.0_Darwin_x86_64.tar.gz"
-      sha256 "f2de66cd682fdd4e2ecae0785a9aaa23466148e61c6ce556313f75f495816cdf"
+    if Hardware::CPU.arm?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Darwin_arm64.tar.gz"
+      sha256 "e756c0b225a91a860ba32ea2afccd4d0009727f5f6ee93a54eb98f63c0f87801"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.0/cacctl_0.5.0_Darwin_arm64.tar.gz"
-      sha256 "fee026ac3101fda92b306124a5b65c435c2ce25e88d84b305cbda79ea7f47388"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Darwin_x86_64.tar.gz"
+      sha256 "f7007543100dc49cc3bff9055ccefe8dfd54838786ebf262efab0a99714f6c82"
 
       def install
         bin.install "cacctl"
@@ -27,17 +27,17 @@ class Cacctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.0/cacctl_0.5.0_Linux_arm64.tar.gz"
-      sha256 "102f6787fa7fe7688327566e776197eb944ce9355ec2c615b8f2fabee7e2f082"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Linux_x86_64.tar.gz"
+      sha256 "97d0d6a17cbebeb98b574fab42fc028bc25823a04157069d7de3dd07b6f0985b"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.5.0/cacctl_0.5.0_Linux_x86_64.tar.gz"
-      sha256 "3f2fc43133ff41ea6d6f355f7a34ca32b7d2c46d4a4466e9b34025c7944ede15"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hef/cacctl/releases/download/v0.5.1/cacctl_0.5.1_Linux_arm64.tar.gz"
+      sha256 "77de1b273e742587c6702614c4c2a8102b1e0028fe520a3322c1449d77b02aa7"
 
       def install
         bin.install "cacctl"
