@@ -5,20 +5,20 @@
 class Cacctl < Formula
   desc "CAC command-line interface"
   homepage "https://github.com/hef/cacctl"
-  version "0.13.2"
+  version "0.14.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.13.2/cacctl_0.13.2_Darwin_x86_64.tar.gz"
-      sha256 "2545c87b9842189cabe674dcebb4670b2de4b99270e5318b6ff863ac03f9af49"
+      url "https://github.com/hef/cacctl/releases/download/v0.14.0/cacctl_0.14.0_Darwin_x86_64.tar.gz"
+      sha256 "b3cafc17dcf3f1d124caca87bf6fb8113a3843d4b9bc15e23da003ebd7fd8e0d"
 
       def install
         bin.install "cacctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hef/cacctl/releases/download/v0.13.2/cacctl_0.13.2_Darwin_arm64.tar.gz"
-      sha256 "e287e3cba96c84f4f1e4d138a300f93796fd9d5e6c40e8b5eb57906571bdcd19"
+      url "https://github.com/hef/cacctl/releases/download/v0.14.0/cacctl_0.14.0_Darwin_arm64.tar.gz"
+      sha256 "27a868ceb0ac686e0871645b454a04a7c45190d1073a94a9af062b60091dc35d"
 
       def install
         bin.install "cacctl"
@@ -27,17 +27,17 @@ class Cacctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hef/cacctl/releases/download/v0.13.2/cacctl_0.13.2_Linux_arm64.tar.gz"
-      sha256 "edf3468606384b4a1400c20df985ad045a088577423e4b4cfdcaf27f96bdd372"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.14.0/cacctl_0.14.0_Linux_x86_64.tar.gz"
+      sha256 "f37ec8385d9ca80d53d3366bf4af23f3f05485729313b6b4c349068171350a7f"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.13.2/cacctl_0.13.2_Linux_x86_64.tar.gz"
-      sha256 "333297d878eb6f089f253a260a14f6ae0b73938755ffcb02eb6d9835aea57e43"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hef/cacctl/releases/download/v0.14.0/cacctl_0.14.0_Linux_arm64.tar.gz"
+      sha256 "6abbf84ff55033d2ccfb1141875b3fe64f8dee1462eafb40eab6f6977c136218"
 
       def install
         bin.install "cacctl"
