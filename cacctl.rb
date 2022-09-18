@@ -5,20 +5,20 @@
 class Cacctl < Formula
   desc "CAC command-line interface"
   homepage "https://github.com/hef/cacctl"
-  version "0.16.0"
+  version "0.17.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.16.0/cacctl_0.16.0_Darwin_x86_64.tar.gz"
-      sha256 "d36d9dc615e5336be1bcbfe6a87d5992433c809c23ab447feb0b05bf0bf68b49"
+    if Hardware::CPU.arm?
+      url "https://github.com/hef/cacctl/releases/download/v0.17.0/cacctl_0.17.0_Darwin_arm64.tar.gz"
+      sha256 "c75ebb226743c6b8b4bb47478c51a4c75a0eb29b76cde43593329b675a75ab05"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hef/cacctl/releases/download/v0.16.0/cacctl_0.16.0_Darwin_arm64.tar.gz"
-      sha256 "40bf0311a1ae2d196eb059f4a46265357406a12c52ba707819a8f4c9d0919175"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.17.0/cacctl_0.17.0_Darwin_x86_64.tar.gz"
+      sha256 "bb472f287b0033a746ecd5662ffcc1d3664101370bbf4e37c73e36731bbd57fd"
 
       def install
         bin.install "cacctl"
@@ -27,17 +27,17 @@ class Cacctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/hef/cacctl/releases/download/v0.16.0/cacctl_0.16.0_Linux_x86_64.tar.gz"
-      sha256 "3416356b9be01085508a51e7260a36f4316243662c80c33d3fb41890660efc08"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hef/cacctl/releases/download/v0.17.0/cacctl_0.17.0_Linux_arm64.tar.gz"
+      sha256 "ccdbb6b4ed5e2d02f5420443a8419452c002463ecd165760f1090697463d4224"
 
       def install
         bin.install "cacctl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hef/cacctl/releases/download/v0.16.0/cacctl_0.16.0_Linux_arm64.tar.gz"
-      sha256 "4fced41418e5faf868c9ed0ff0d1f706840355cf5af03beedf1649080a9ee2f6"
+    if Hardware::CPU.intel?
+      url "https://github.com/hef/cacctl/releases/download/v0.17.0/cacctl_0.17.0_Linux_x86_64.tar.gz"
+      sha256 "c0bd49d3917287e570d3952a70dc92331530c459fb73636f073799c68dfccd5f"
 
       def install
         bin.install "cacctl"
